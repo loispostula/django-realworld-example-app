@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-import views
+from .views import HealthCheckView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -23,5 +23,5 @@ urlpatterns = [
     url(r'^api/', include('conduit.apps.articles.urls', namespace='articles')),
     url(r'^api/', include('conduit.apps.authentication.urls', namespace='authentication')),
     url(r'^api/', include('conduit.apps.profiles.urls', namespace='profiles')),
-    url(r'^status/?$', views.HealthCheckView.as_view()),
+    url(r'^status/?$', HealthCheckView.as_view()),
 ]
