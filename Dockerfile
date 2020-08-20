@@ -37,7 +37,7 @@ ENV DJANGO_SETTINGS_MODULE=conduit.settings
 
 RUN DATABASE_URL='' python manage.py collectstatic --noinput
 
-ENV UWSGI_ROUTE_HOST="^(?!backend.toptal.postu.la$) break:400"
+ENV UWSGI_ROUTE_HOST="^(?!backend.realworld.toptal.postu.la$) break:400"
 # Tell uWSGI where to find your wsgi file (change this):
 ENV UWSGI_WSGI_FILE=conduit/wsgi.py
 
@@ -53,6 +53,6 @@ ENV UWSGI_STATIC_MAP="/static/=/code/static/" UWSGI_STATIC_EXPIRES_URI="/static/
 
 # Change to a non-root user
 USER ${APP_USER}:${APP_USER}
-#ENTRYPOINT ["/code/docker-entrypoint.sh"]
+ENTRYPOINT ["/code/docker-entrypoint.sh"]
 # Start uWSGI
 CMD ["uwsgi", "--show-config"]

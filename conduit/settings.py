@@ -26,7 +26,7 @@ SECRET_KEY = 'oWuNn2R!T@P.72cGWYoUz.LDaPeeFKHNf3hf!M!ZhPtppsj4tLGYQT@eX!zoaq9Gk4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["backend.realworld.toptal.postu.la"]
 
 
 # Application definition

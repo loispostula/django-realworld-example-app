@@ -8,7 +8,7 @@ done
 
 >&2 echo "Postgres is up - continuing"
 
-if [ "x$DJANGO_MANAGEPY_MIGRATE" = 'xon' ]; then
+if [ "$DJANGO_MANAGEPY_MIGRATE" = 'on' ]; then
     python manage.py migrate --noinput
 fi
 
