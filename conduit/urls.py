@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^api/', include('conduit.apps.authentication.urls', namespace='authentication')),
     url(r'^api/', include('conduit.apps.profiles.urls', namespace='profiles')),
     url(r'^status/?$', HealthCheckView.as_view()),
+    url('', include('django_prometheus.urls')),
 ]
