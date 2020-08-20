@@ -27,6 +27,7 @@ SECRET_KEY = 'oWuNn2R!T@P.72cGWYoUz.LDaPeeFKHNf3hf!M!ZhPtppsj4tLGYQT@eX!zoaq9Gk4
 DEBUG = False
 
 ALLOWED_HOSTS = ["backend.realworld.toptal.postu.la"]
+ALLOWED_HOSTS = ["localhost"]
 
 
 # Application definition
