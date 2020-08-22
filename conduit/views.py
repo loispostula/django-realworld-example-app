@@ -21,6 +21,6 @@ class PerfomanceTestView(View):
     Mock Performance regression
     """
     def get(self, request, *args, **kwargs):
-        time.sleep(os.getenv("DJANGO_PERFORMANCE_MOCK_SLEEP", 0)
+        time.sleep(os.getenv("DJANGO_PERFORMANCE_MOCK_SLEEP", 0))
         return HttpResponse("ok")
 
