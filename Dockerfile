@@ -54,4 +54,4 @@ ENV UWSGI_STATIC_MAP="/static/=/code/static/" UWSGI_STATIC_EXPIRES_URI="/static/
 USER ${APP_USER}:${APP_USER}
 ENTRYPOINT ["/code/docker-entrypoint.sh"]
 # Start uWSGI
-CMD ["uwsgi", "--show-config"]
+CMD ["uwsgi", "--log-master", "--show-config"]

@@ -1,3 +1,5 @@
+import os
+import time
 from django.views import View
 from django.db import connection
 from django.http import HttpResponse
@@ -13,3 +15,12 @@ class HealthCheckView(View):
             if one != 1:
                 raise Exception('The site did not pass the health check')
         return HttpResponse("ok")
+
+class PerfomanceTestView(View):
+    """
+    Mock Performance regression
+    """
+    def get(self, request, *args, **kwargs):
+        time.sleep(os.getenv("DJANGO_PERFORMANCE_MOCK_SLEEP", 0)
+        return HttpResponse("ok")
+
