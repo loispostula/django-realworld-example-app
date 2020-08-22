@@ -16,7 +16,7 @@ class HealthCheckView(View):
                 raise Exception('The site did not pass the health check')
         return HttpResponse("ok")
 
-class PerfomanceTestView(View):
+class PerformanceTestView(View):
     """
     Mock Performance regression
     """
