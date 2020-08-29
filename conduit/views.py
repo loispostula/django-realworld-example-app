@@ -24,3 +24,9 @@ class PerformanceTestView(View):
         time.sleep(os.getenv("DJANGO_PERFORMANCE_MOCK_SLEEP", 0))
         return HttpResponse("ok")
 
+class VersionView(View):
+    """
+    Return string to showcase update
+    """
+    def get(self, request, *args, **kwargs):
+        return HttpResponse("v1.2.4")

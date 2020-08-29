@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from .views import HealthCheckView, PerformanceTestView
+from .views import HealthCheckView, PerformanceTestView, VersionView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -25,5 +25,6 @@ urlpatterns = [
     url(r'^api/', include(('conduit.apps.profiles.urls', 'profiles'), namespace='profiles')),
     url(r'^status/?$', HealthCheckView.as_view()),
     url(r'^performance/?$', PerformanceTestView.as_view()),
+    url(r'^version/?$', VersionView.as_view()),
     url('', include('django_prometheus.urls')),
 ]
