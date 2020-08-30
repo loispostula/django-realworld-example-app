@@ -35,7 +35,12 @@ EXPOSE 8000
 
 ENV DJANGO_SETTINGS_MODULE=conduit.settings
 
+# Run tests
+
+RUN DATABASE_URL='' python manage.py test
+
 RUN DATABASE_URL='' python manage.py collectstatic --noinput
+
 
 # Tell uWSGI where to find your wsgi file (change this):
 ENV UWSGI_WSGI_FILE=conduit/wsgi.py

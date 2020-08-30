@@ -29,4 +29,4 @@ class VersionView(View):
     Return string to showcase update
     """
     def get(self, request, *args, **kwargs):
-        return HttpResponse("v1.2.4")
+        return HttpResponse("v1.2.5")
